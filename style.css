@@ -1,0 +1,208 @@
+* {
+    box-sizing: border-box;
+}
+
+.hidden {
+    display: none;
+} 
+
+.card {
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden; /* This prevents any unwanted scrollbars */
+    background-color: #222227 !important;
+}
+
+.card > #qa {
+    width: 100%;
+    height: 82%;
+    margin: 0;
+    padding: 10px 12px 10px 12px !important;
+}
+
+#qa > .card-container {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    border-radius: 5%;
+    background: rgb(51,51,51);
+    background: linear-gradient(51deg, rgba(51,51,51,1) 25%, rgba(68,68,68,1) 75%, rgba(85,85,85,1) 100%);
+    box-shadow: -2px 4px 10px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    background-image: url("bg-texture.jpg");
+    background-size: cover;
+}
+
+.card-container > .image-full {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.image-full > img, .image-square > img {
+    width: 100%;
+    height: 100%;
+    max-height: unset;
+    max-width: unset;
+    display: block; /* This removes any space below the image */
+    object-fit: cover; /* This will cover the container without distorting the image aspect ratio */
+}
+
+.image-square {
+    display: none !important;
+}
+
+.current-image {
+    display: flex !important;
+}
+
+.gallery-button {
+    position: absolute;
+    right: 30px;
+    top: 32%;
+    padding: 20px;
+    background: none;
+    border: unset;
+}
+
+.gallery-button img {
+    width: 45px;
+    opacity: 0.5;
+}
+
+.gallery-button:hover {
+    background: none;
+    border: unset;
+}
+
+.gallery-button-full {
+    top: 0%;
+    right: 10px;
+    box-shadow: none !important;
+}
+
+.card-fullinfo {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.full-hr {
+    width: 100%;
+    height: 1px;
+    background-color: #ffdeb5 !important;
+    margin: 10px 0;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 1);
+}
+
+
+.image-square {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 52%;
+    max-height: 52%;
+    overflow: hidden;
+    border-radius: 4% 4% 0 0;
+    background-color: #444;
+}
+
+.target-translation {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    position: relative;
+    text-align: left;
+}
+
+.target-text-column {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.target-gender {
+    display: flex;
+    flex-direction: column;
+    margin-top: 4px;
+    font-size: 13px;
+}
+
+.gender-icon {
+    margin-right: 5px;
+    position: relative;
+    top: -7px;
+}
+
+.gender-male {
+    color: lightblue;
+}
+
+.gender-female {
+    color: pink;
+}
+
+.target-text {
+    font-size: 26px;
+    text-align: left;
+}
+
+.native-text {
+    margin: 0;
+    margin-top: auto;
+    padding: 10px;
+    border: 1px solid #777;
+    border-radius: 0 0 6px 6px;
+    color: #777;
+    text-align: left;
+}
+
+.name-text {
+    font-size: 13px;
+    margin-bottom: 7px;
+}
+
+.description-text {
+    font-size: 10px;
+}
+
+.habitat-text {
+    font-size: 10px;
+    margin-top: 7px;
+}
+
+.target-translation .audio {
+    display: flex;
+}
+
+
+.audio-button {
+    position: absolute;
+    top: 9px;
+    left: 0;
+    opacity: 0;
+}
+
+.replay-button {
+    opacity: 0.45;
+    padding: 20px 120px 20px 30px;
+}
+
+.playImage {
+    width: 30px !important;
+    height: 30px !important;
+}
+
+.audio-ipa {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    align-items: left;
+    margin-bottom: 8px;
+}

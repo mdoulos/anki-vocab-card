@@ -1,0 +1,72 @@
+<div class="card-container card-back card-fullinfo">
+    <div class="image-square current-image" id="image-1">{{Image Gallery 1}}</div>
+    <div class="image-square" id="image-2">{{Image Gallery 2}}</div>
+    <div class="image-square" id="image-3">{{Image Gallery 3}}</div>
+    <div class="image-square" id="image-3">{{Image Gallery 4}}</div>
+    <div class="image-square" id="image-3">{{Image Gallery 5}}</div>
+
+    <div class="full-hr"></div>
+    
+    <button class="gallery-button" id="gallery-button"><img src="gallery-icon.png"></button>
+
+    <div class="target-translation">
+        <div class="target-text-column">
+            <div class="target-text">{{Name (TL)}}</div>
+            <div class="audio">
+                 <div class="audio-ipa"><span>{{IPA (TL)}}</span></div>
+                 <div class="audio-button">{{Audio (TL)}}</div>
+            </div>
+            <div class="target-gender">
+                 <span><span class="gender-icon gender-male">♂️</span><span class="gender-male">{{Mas. (TL)}}</span></span>
+                 <span><span class="gender-icon gender-female">♀️</span><span class="gender-female">{{Fem. (TL)}}</span></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="native-text">
+        <div class="name-text">{{Name (EN)}}</div>
+        <div class="description-text">{{Description (EN)}}</div>
+        <div class="habitat-text">Location: {{Location (EN)}}</div>
+    </div>
+</div>
+
+<script>
+		var galleryButton = document.getElementById('gallery-button');
+		galleryButton.addEventListener('click', function(event) {
+    event.preventDefault();
+    const images = document.querySelectorAll('.image-square');
+    let currentIndex = -1;
+
+    // Find the current image
+    for (let i = 0; i < images.length; i++) {
+        if (images[i].classList.contains('current-image')) {
+            currentIndex = i;
+            break;
+        }
+    }
+
+    // If no current image found, make the first one current
+    if (currentIndex === -1) {
+        images[0].classList.add('current-image');
+        return;
+    }
+
+    // Remove the current-image class from the current image
+    images[currentIndex].classList.remove('current-image');
+
+    // Determine the next index
+    let nextIndex = (currentIndex + 1) % images.length;
+    
+    // If the next image doesn't have an image, go back to the first image
+    while (!images[nextIndex].querySelector('img')) {
+        nextIndex = (nextIndex + 1) % images.length;
+
+        // If we looped back to the starting image, stop
+        if (nextIndex === currentIndex) break;
+    }
+    
+    // Set the next image as current
+    images[nextIndex].classList.add('current-image');
+});
+
+</script>
